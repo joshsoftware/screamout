@@ -6,7 +6,12 @@
     = "Title:"
     = link_to "#{@title}", @content.url
     %br
+    = "Tags:"
+    = @tags
+    %br
     = "-#{@content.user.public_profile.name.titleize}"
+    - if @content.user.public_profile.twitter_handle.present?
+      = "(@#{@content.user.public_profile.twitter_handle})" 
     %br
     %br
     %div{ style: "position: relative; overflow: hidden; min-height: 215px;"}
