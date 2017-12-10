@@ -13,7 +13,7 @@ gemspec
 # To use debugger
 # gem 'debugger'
 gem 'mongoid'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'sass-rails', '4.0.3'
 gem 'twitter-bootstrap-rails', '2.2.8'
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
