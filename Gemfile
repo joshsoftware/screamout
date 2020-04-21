@@ -12,16 +12,16 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
-gem 'mongoid'
+gem 'mongoid', '~>5.4'
 gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'sass-rails', '4.0.3'
 gem 'twitter-bootstrap-rails', '2.2.8'
-gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+gem 'simple_form'#, :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'turbolinks'
 gem 'twitter-typeahead-rails'
 gem 'imgkit'
 gem "jquery-rails"
-gem 'mongoid_taggable'
+gem 'mongoid_taggable', git: 'https://github.com/garethcokell/mongoid_taggable.git'
 gem 'mongoid_rateable', :git => 'git://github.com/PerfectMemory/mongoid_rateable.git'
 gem "bson"
 gem 'sidekiq'
@@ -40,7 +40,7 @@ group :test do
   gem 'rspec-rails', '2.14.2'
   gem 'mongoid-rspec'
   gem 'factory_girl_rails'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '~>1.8'
   gem 'simplecov', '~> 0.7.1'
   gem 'faker'
 end
