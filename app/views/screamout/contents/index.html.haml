@@ -14,7 +14,7 @@
 
   
   %div
-    .row#content_list
+    .row#content_list{:style => 'margin-left:10px'}
      
 #myModal.modal.fade
   .modal-dialog
@@ -24,10 +24,11 @@
 #screamout
 
 %script#template{:type => "x-tmpl-mustache"}
-  .span3.fjs-ele
+  .span3.fjs-ele{:style => 'margin-left:20px'}
     %br
     .thumbnail
-      %img{src: "{{photo_url}}", class: 'custom-image-rendering'}
+      - if Rails.env.production?
+        %img{src: "{{photo_url}}", class: 'custom-image-rendering'}
       {{#valid_user}}
       .bookmark-controls
         %a.btn.btn-primary.edit-control{:id => "{{id}}", href: "/screamout/contents/{{id}}/details", "data-remote" => true}
@@ -48,7 +49,8 @@
             {{name}}
             %br
             {{#user_photo_url}}
-            %img{src: "{{user_photo_url}}", class: 'custom-image-rendering img-polaroid'}
+            - if Rails.env.production?
+              %img{src: "{{user_photo_url}}", class: 'custom-image-rendering img-polaroid'}
             {{/user_photo_url}}
 
 /
