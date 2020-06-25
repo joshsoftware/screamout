@@ -1129,6 +1129,13 @@
       vals = [].concat.apply([], vals);
     }
   
+    if (criteria.field == 'tags_array' && vals.length){
+      vals = vals[0].split(',');
+      if (vals[0].length <= 0){
+        vals = [];
+      }
+    }
+
     if(criteria.all && vals.indexOf(criteria.all) > -1){
       return;
     }

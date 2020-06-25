@@ -2,7 +2,6 @@ loadTags = function(){
 $('.search-query').on('change', function(e) {
   var selected_vals = $.map($('.search-query').select2('data'), function(e, i){return e.text}).join(',')
   $('#content_tags').val(selected_vals);
-  content_filter.filter();
 });
 $('div.container').on('click', 'a.select2-choice', function(e) {
    
@@ -35,10 +34,18 @@ function filterInit(){
       field: 'tags_array',
       ele: '#content_tags',
       event: 'change',
-      type: 'tag'
+      selector: 'input',
     }],
     callbacks: {
-      afterFilter: afterFilter 
+      afterFilter: afterFilter
+    },
+    pagination: {
+      container: '#contents_pagination',
+      visiblePages: 5,
+      perPage: {
+        values: [20],
+        container: '#contents_per_page',
+      }
     }
   }
   return FilterJS(conc, "#content_list", settings)

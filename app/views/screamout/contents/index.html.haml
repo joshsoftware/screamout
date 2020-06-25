@@ -11,11 +11,14 @@
         .control-group
           = f.input :tags ,:type=> 'search', label: false, input_html: {:class => 'input-medium search-query input-xxlarge'}
            
-
-  
+      %span#contents_per_page.content
   %div
     .row#content_list{:style => 'margin-left:10px'}
      
+  %br
+  .col-lg-12.padding_none.pull-right
+    #contents_pagination
+
 #myModal.modal.fade
   .modal-dialog
     .modal-content
@@ -67,5 +70,6 @@
   $(document).on('ready page:load', function(){
     loadTags();
     window.content_filter = filterInit();
+    $('.per-page').hide();
   })
 
