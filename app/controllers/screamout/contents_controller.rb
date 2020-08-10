@@ -4,6 +4,7 @@ module Screamout
     def index
       @contents = Content.all.desc(:created_at)   
       @con = Content.new
+      @host_url = 'http://' + request.env['HTTP_HOST']
       @tags_hash = Content.get_all_tags
     end
 

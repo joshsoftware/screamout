@@ -66,7 +66,8 @@ module Screamout
     end
 
     def user_photo_url
-      self.user.try(:public_profile).try(:image).try(:thumb).try(:url)
+      url = self.user.try(:public_profile).try(:image).try(:thumb).try(:url)
+      url.include?('default') ? '/assets/' + url : url
     end
   end
 end
