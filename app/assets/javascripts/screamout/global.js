@@ -28,7 +28,7 @@ function filterInit(){
   }
 
   var settings = {
-    template: template,
+    template: '#template',
     view: view,
     criterias: [{
       field: 'tags_array',
