@@ -5,7 +5,7 @@
 
   .row
     .span8
-      = link_to t('.new', :default => t("helpers.links.new")), new_content_path, :class => 'btn btn-primary'
+      = link_to t('.new', :default => t("helpers.links.new")), new_content_path, :class => 'btn btn-primary', role: 'button', 'aria-label': 'Click here to Add new blogs'
       = simple_form_for @con, :html => { :class => 'form-search' } do |f|
         %br
         .control-group
@@ -34,9 +34,9 @@
         %img{src: "{{photo_url}}", class: 'custom-image-rendering'}
       {{#valid_user}}
       .bookmark-controls
-        %a.btn.btn-primary.edit-control{:id => "{{id}}", href: "/screamout/contents/{{id}}/details", "data-remote" => true}
+        %a.btn.btn-primary.edit-control{:id => "{{id}}", role: 'button', 'aria-label': 'Click here to edit blog', href: "/screamout/contents/{{id}}/details", "data-remote" => true}
           %span.icon-edit
-        %a.btn.btn-default{href:"/screamout/contents/{{id}}",data:{method:"delete" ,confirm:"Are you sure?" }}
+        %a.btn.btn-default{ role: 'button', 'aria-label': 'Click here to delete blog', href:"/screamout/contents/{{id}}", data:{ method: "delete" ,confirm: "Are you sure?" }}
           %span.icon.icon-trash
       {{/valid_user}}
       %a{target:"_blank" ,href:"{{url}}" }
