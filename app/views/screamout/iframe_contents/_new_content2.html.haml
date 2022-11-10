@@ -14,10 +14,10 @@
           = f.input :url, :label =>false, :placeholder => 'Url', input_html:{class: 'input-xxlarge margin40'}
         .row-fluid
           = f.label :title, class: 'text-left'
-          = f.input :title, :label =>false, :placeholder => 'Title', input_html:{class: 'input-xxlarge margin40'}  
-        .row-fluid
-          = f.label :rates, class: 'text-left'
-          = f.input :rates, :label =>false, input_html:{class: 'input-xxlarge margin40'}  
+          = f.input :title, :label =>false, :placeholder => 'Title', input_html:{class: 'input-xxlarge margin40'}
+        -# .row-fluid
+        -#   = f.label :rates, class: 'text-left'
+        -#   = f.input :rates, :label =>false, input_html:{class: 'input-xxlarge margin40'}
         .row-fluid
           = f.label :tags, class: 'text-left'
           = f.input :tags, :label =>false, :input_html => {class: 'input-xxlarge margin40', :id => "contentTags"}
@@ -39,7 +39,7 @@
     };
 
     $('#cancel').on ('click',function(){parent.window.postMessage("removetheiframe", "*");})
-    
+
 
     window.addEventListener("message", receiveMessage, false);
     window.onload = askData;
