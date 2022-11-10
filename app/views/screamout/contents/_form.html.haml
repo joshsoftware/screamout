@@ -1,6 +1,6 @@
 .container-fluid
   = simple_form_for(@content, :html=>{:class => 'form-horizontal'}) do |f|
-      
+
     = f.error_notification
     .row-fluid
       .div
@@ -10,9 +10,9 @@
     .row-fluid
       = f.label :title, class: "text-left"
       = f.input :title, :label =>false, :placeholder => "Title", :input_html => {class: "input-xlarge margin40"}
-    .row-fuid
-      = f.label :rates, class: "text-left"
-      = f.input :rates, :label =>false, :input_html => {class: "input-xlarge margin40"}
+    -#.row-fuid
+    -#  = f.label :rates, class: "text-left"
+    -#  = f.input :rates, :label =>false, :input_html => {class: "input-xlarge margin40"}
     .row-fluid
       = f.label :tags, class: "text-left"
       = f.input :tags, :label =>false, :input_html => {class: 'input-xlarge tags_container margin40', multiple: true, value: "#{@tags}"}
@@ -22,4 +22,3 @@
 :javascript
   $('.tags_container').select2({tags: #{@tags_hash.to_json}, tokenSeparators: [",", " "]})
   $('#cancel').on ('click',function(){$('#myModal').modal('hide');})
-
