@@ -6,11 +6,11 @@ GIT
       mongoid (~> 4.0.alpha)
 
 GIT
-  remote: git://github.com/bmc/jquery-raty-rails.git
-  revision: f362f17c0ff3ac039ab05b5e48e5db24a27794b3
+  remote: git://github.com/mimemagicrb/mimemagic.git
+  revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
   specs:
-    jquery-raty-rails (0.0.1)
-      rails (>= 3.2.3)
+    mimemagic (0.3.5)
 
 GIT
   remote: git://github.com/mongoid/mongoid.git
@@ -21,6 +21,35 @@ GIT
       moped (~> 2.0.0.rc2)
       origin (~> 2.1)
       tzinfo (>= 0.3.37)
+
+GIT
+  remote: https://github.com/mongoid/mongoid-history.git
+  revision: 82de8b7c8c1a8acc85dbd7e3ee53883339a5c2bb
+  specs:
+    mongoid-history (0.8.5)
+      activesupport
+      easy_diff
+      mongoid (>= 3.0)
+      mongoid-compatibility (>= 0.5.1)
+
+GIT
+  remote: https://github.com/rweng/jquery-datatables-rails.git
+  revision: d486b31b192a2924b1913e080ad23460e6b96d31
+  specs:
+    jquery-datatables-rails (3.4.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
+
+GIT
+  remote: https://github.com/yourabi/twitter-typeahead-rails.git
+  revision: fc343ac2f026589117bad0b7234c8bc69ef8bd6a
+  specs:
+    twitter-typeahead-rails (0.11.1.pre.corejavascript)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
 
 GEM
   remote: https://rubygems.org/
@@ -57,11 +86,12 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
-    bcrypt (3.1.7)
-    bootstrap-sass (3.2.0.0)
+    bcrypt (3.1.18)
+    bootstrap-sass (3.2.0.4)
       sass (~> 3.2)
     bson (2.3.0)
     builder (3.2.2)
+    byebug (10.0.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     climate_control (0.0.3)
@@ -85,6 +115,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    easy_diff (1.0.0)
     erubis (2.7.0)
     execjs (2.2.0)
     factory_girl (4.4.0)
@@ -150,6 +181,9 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.3.5)
+    mongoid-compatibility (0.6.0)
+      activesupport
+      mongoid (>= 2.0)
     mongoid-paperclip (0.0.9)
       paperclip (>= 2.3.6)
     mongoid-rspec (1.10.0)
@@ -193,6 +227,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    pg (0.21.0)
     polyglot (0.3.5)
     pry (0.10.0)
       coderay (~> 1.1.0)
@@ -278,9 +313,9 @@ GEM
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
-    simple_form (3.0.2)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
+    simple_form (3.5.1)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -316,10 +351,6 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    twitter-typeahead-rails (0.10.2)
-      actionpack (>= 3.1)
-      jquery-rails
-      railties (>= 3.1)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     uglifier (2.5.1)
@@ -333,9 +364,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   aws-sdk (~> 1.3.4)
+  bcrypt (~> 3.1.13)
   bootstrap-sass (~> 3.2.0)
   bson
+  byebug
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
@@ -348,16 +382,19 @@ DEPENDENCIES
   html2haml
   imgkit
   jbuilder (~> 2.0)
+  jquery-datatables-rails!
   jquery-rails
-  jquery-raty-rails!
   jquery-ui-rails
+  mimemagic!
   mongoid!
+  mongoid-history!
   mongoid-paperclip
   mongoid-rspec
   mongoid_rateable!
   mongoid_taggable
   omniauth
   omniauth-google-oauth2
+  pg (~> 0.18)
   pry
   rails (= 4.1.1)
   redis-namespace
@@ -366,12 +403,15 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sidekiq
-  simple_form
+  simple_form (~> 3.2, >= 3.2.1)
   simplecov (~> 0.7.1)
   sinatra
   slim
   spring
   therubyracer
   turbolinks
-  twitter-typeahead-rails
+  twitter-typeahead-rails!
   uglifier (>= 1.3.0)
+
+BUNDLED WITH
+   1.17.3

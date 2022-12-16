@@ -1,16 +1,17 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  devise_for :users
   resources :iframe_contents
   resources :contents do
     member do
       get 'details'
     end
     collection do
-      get 'tags'      
+      get 'tags'
     end
   end
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  # devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'contents#index'
   mount Sidekiq::Web, at:'/sidekiq'
   # The priority is based upon order of creation: first created -> highest priority.
