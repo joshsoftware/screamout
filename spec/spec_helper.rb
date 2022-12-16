@@ -5,8 +5,7 @@ require 'simplecov'
 SimpleCov.start 'rails'
 require_relative 'dummy/config/environment'
 require 'rspec/autorun'
-require 'mongoid-rspec'
-require 'rspec/rails'
+# require 'rails/mongoid'
 require 'database_cleaner'
 require 'paperclip/matchers'
 require 'sidekiq/testing'
@@ -47,7 +46,7 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-  #config.before(:each) { @routes = UserManager::Engine.routes } 
+  #config.before(:each) { @routes = UserManager::Engine.routes }
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
@@ -59,11 +58,9 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  config.include FactoryGirl::Syntax::Methods
-
-  I18n.enforce_available_locales = false
-
-  config.include Mongoid::Matchers
+  RSpec.configure do |config|
+    # config.include Mongoid::Matchers, type: :model
+  end
 
   config.extend ControllerHelper, type: :controller
 end

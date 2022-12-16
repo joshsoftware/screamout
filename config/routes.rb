@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
-Screamout::Engine.routes.draw do
+Rails.application.routes.draw do
+  devise_for :users
   resources :iframe_contents
   resources :contents do
     member do
@@ -10,6 +11,7 @@ Screamout::Engine.routes.draw do
       get 'tags'
     end
   end
-  #root 'contents#index'
+  # devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  root 'contents#index'
   mount Sidekiq::Web, at:'/sidekiq'
 end
