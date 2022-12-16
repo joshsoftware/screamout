@@ -14,7 +14,13 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'omniauth'
-gem 'simple_form'
+gem 'byebug'
+gem 'pg', '~> 0.18'
+gem 'activerecord'
+gem 'bcrypt', '~> 3.1.13'
+# gem 'simple_form'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'mongoid-history', git: 'https://github.com/mongoid/mongoid-history.git'
 # Use jquery as the JavaScript library
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -23,7 +29,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'twitter-typeahead-rails'
+# gem 'twitter-typeahead-rails'
+gem 'twitter-typeahead-rails', :git => "https://github.com/yourabi/twitter-typeahead-rails.git"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'jquery-ui-rails'
@@ -50,13 +57,14 @@ group :development, :test do  #overrite existing..generate spec directory,,inclu
 		gem 'faker'
 		gem 'database_cleaner'
 		gem 'simplecov', '~> 0.7.1'
-		gem 'guard-rspec', require: false		
+		gem 'guard-rspec', require: false
 end
 gem 'mongoid-rspec'		#tests beginning with 'should'
-gem 'mongoid_taggable'	
+gem 'mongoid_taggable'
 gem 'mongoid_rateable', :git => 'git://github.com/PerfectMemory/mongoid_rateable.git'
 gem "bson"
-gem 'jquery-raty-rails', github: 'bmc/jquery-raty-rails' # Bleeding edge
+# gem 'jquery-raty-rails', github: 'bmc/jquery-raty-rails' # Bleeding edge
+gem 'jquery-datatables-rails', git: 'https://github.com/rweng/jquery-datatables-rails.git'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
