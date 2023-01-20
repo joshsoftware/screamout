@@ -11,9 +11,10 @@
     %br
     = "-#{@content.user.public_profile.name.titleize}"
     - if @content.user.public_profile.twitter_handle.present?
-      = "(@#{@content.user.public_profile.twitter_handle})" 
+      = "(@#{@content.user.public_profile.twitter_handle})"
     %br
     %br
     %div{ style: "position: relative; overflow: hidden; min-height: 215px;"}
-      = link_to image_tag(attachments['screamout.jpg'].url), "#{HOST_URL}/screamout/contents" 
-    
+      = link_to image_tag(attachments['screamout.jpg'].url), @content.url
+  %br
+  = link_to "Visit Here for more content", "#{HOST_URL}/screamout/contents"
